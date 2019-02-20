@@ -41,6 +41,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'awesome_print'
   gem 'enumerize'
+  gem 'countries'
 end
 
 group :development do

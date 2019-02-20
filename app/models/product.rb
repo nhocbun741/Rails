@@ -1,10 +1,14 @@
 class Product < ApplicationRecord
+    # enumerize
+    extend Enumerize
+    enumerize :level, in: [:easy, :medium, :hard], default: :easy
+    enumerize :country, in: ISO3166::Country.translations, default: :DE
+
+    # valides
     validates :title, :description, :price, presence: true
 
     validate :title_is_shorter_than_description
     
-    extend Enumerize
-    enumerize :level, in: [:easy, :medium, :hard], default: :easy
 
     def title_is_shorter_than_description
         return if title.blank? || description.blank?
