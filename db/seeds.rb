@@ -8,8 +8,8 @@
 
 #Product
 Product.create!(title: 'Ruby Book', description: 'Learn Ruby programming', price: 12.99, published: true)
-Product.create!(title: 'jQuery Book', description: 'Learn jQuery', price: 11.99, published: true)
-Product.create!(title: 'SASS Book', description: 'Learn CSS with SASS', price: 19.99, published: true)
+Product.create!(title: 'jQuery Book', description: 'Learn jQuery', price: 11.99, published: false)
+Product.create!(title: 'SASS Book', description: 'Learn CSS with SASS', price: 19.99, published: false)
 Product.create!(title: 'UPPER CASE', description:'lower case words', price: 8, published: true)
 
 # #Category
