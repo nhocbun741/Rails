@@ -3,6 +3,9 @@ class Product < ApplicationRecord
 
     validate :title_is_shorter_than_description
     
+    extend Enumerize
+    enumerize :level, in: [:easy, :medium, :hard], default: :easy
+
     def title_is_shorter_than_description
         return if title.blank? || description.blank?
         if description.length < title.length
