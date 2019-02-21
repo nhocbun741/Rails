@@ -4,6 +4,7 @@
     <th>Description</th>
     <th>Price</th>
     <th>Titile of Product</th>
+    <th>Details</th>
 </tr>
 <% @products.each do |product| %>
 <tr>
@@ -11,8 +12,10 @@
     <td><%= product.description%></td>
     <td><%= product.price%></td>
     <td><%= product.category.try(:title)%></td>
+    <td><%= link_to "Details", product %></td>
 </tr>
 <br>
-<%= link_to "Read More", product %>
+
 <% end %>
   </table>
+  <%= link_to "Create", new_product_url %>

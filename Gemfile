@@ -2,7 +2,12 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
-
+#gem Emumerize
+gem 'enumerize'
+#gem Country select
+gem 'country_select', '~> 4.0'
+#gem Formtastic
+gem 'formtastic', '~> 3.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use sqlite3 as the database for Active Record
@@ -40,9 +45,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'awesome_print'
-  gem 'enumerize'
-  gem 'countries'
-end
+ end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
