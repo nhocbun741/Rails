@@ -6,8 +6,15 @@ class ProductsController < ApplicationController
         @product = Product.find(params[:id]) 
     end
     def new
-        @product = Product.new(title: "Ruby")
-        @categories = Category.all 
+        @product = Product.new
     end
-        
+    def create
+        product_params = params.require(:product).permit(:title, :description, :price, :published, :category, :level, :country)
+        @product = Product.new(product_params)
+        if @product.save
+            redirect_to products_path
+        end
+            render :new
+    end
+    
 end
