@@ -12,5 +12,7 @@
     <td><%= product.price%></td>
     <td><%= product.category.try(:title)%></td>
 </tr>
+<br>
+<%= link_to "Read More", product %>
 <% end %>
   </table>
