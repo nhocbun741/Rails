@@ -4,6 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.1'
 #gem Emumerize
 gem 'enumerize'
+#gem Slim-rails 
+gem 'slim-rails'
 #gem Country select
 gem 'country_select', '~> 4.0'
 #gem Formtastic

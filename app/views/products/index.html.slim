@@ -1,0 +1,10 @@
+table
+  tr
+    th Title
+    th Description
+    th Price
+    th Titile of Product
+    th Details
+    th Action
+  = render partial: 'product', collection: @products
+= link_to "Create", new_product_url
