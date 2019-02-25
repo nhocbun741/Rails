@@ -1,7 +1,8 @@
 class Image < ApplicationRecord
-    validates :headline, :url_image ,presence: true
+    default_scope { order(:position) }
+    validates :headline, :url_image, :article, presence: true
     belongs_to :article
-    def return_images
-        return url_image
-    end 
+    def increase_like
+        self.increament!(:count_like)
+    end
 end

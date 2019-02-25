@@ -1,14 +1,14 @@
 class Article < ApplicationRecord
     validates :title, presence: true
-    def return_text_image
-        
-    end
-    
     def isPublished
         return if created_at.blank?
         if Time.now > created_at
             return true
         end
+    end
+    
+    def increase_like
+        self.increament!(:count_like)
     end
     
     #one to many
