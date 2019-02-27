@@ -17,10 +17,6 @@ ActiveRecord::Schema.define(version: 2019_02_25_080319) do
     t.integer "count_like"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "text_id"
-    t.integer "image_id"
-    t.index ["image_id"], name: "index_articles_on_image_id"
-    t.index ["text_id"], name: "index_articles_on_text_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -33,7 +29,9 @@ ActiveRecord::Schema.define(version: 2019_02_25_080319) do
     t.string "headline"
     t.string "url_image"
     t.integer "count_like"
+    t.integer "article_id"
     t.integer "postion"
+    t.index ["article_id"], name: "index_images_on_article_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -55,7 +53,9 @@ ActiveRecord::Schema.define(version: 2019_02_25_080319) do
     t.integer "count_like"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "article_id"
     t.integer "position"
+    t.index ["article_id"], name: "index_texts_on_article_id"
   end
 
 end
