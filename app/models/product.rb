@@ -42,7 +42,7 @@ class Product < ApplicationRecord
     end
 
     #one to many
-    belongs_to :category, optional: true
+    belongs_to :category
 
 end
 

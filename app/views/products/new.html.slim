@@ -1,10 +1,17 @@
-h1
+
 = semantic_form_for @product do |f|
+  p Title: 
   = f.input :title
+  p Description: 
   = f.input :description
+  p Price: 
   = f.input :price, min: 0.01
+  p Published: 
   = f.input :published
+  p Category: 
   = f.input :category
+  p Level: 
   = f.input :level
+  p Country: 
   = f.input :country
   = f.action :submit
