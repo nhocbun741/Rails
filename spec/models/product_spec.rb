@@ -18,19 +18,19 @@ RSpec.describe Product, type: :model do
     end
     
     context "Logic method" do
+        let!(:product){create(:product, description: '<p>test</p>', title: 'test ABC' )}
+        let!(:build_product){build(:product, description: 'abc')}
         it 'Strips HTML from description' do
-            product = Product.new(description: 'ruby on rails')
-            expect(product.strip_html_from_description).to eq('ruby on rails')
+            expect(product.description).to eq('test')
         end
     
         it "Makes title lowercase" do
-           product = Product.new(title: 'ABC')
-           expect(product.set_title_lowercase()).to eq('abc') 
+           expect(product.title).to eq('test abc') 
         end
     
         it 'Title is shorter than description' do
-            product = Product.new(title: 'ruby', description: 'ru')
-            expect(product.title_is_shorter_than_description()).to eq(['can\'t be shorter than title'])
+            build_product.validate
+            expect(build_product.errors.messages).to include(description: ['can\'t be shorter than title'])
         end
     end
 end

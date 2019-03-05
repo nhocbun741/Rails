@@ -2,6 +2,12 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
+#gem rails i18n
+gem 'rails-i18n', '~> 5.1' # For 5.0.x, 5.1.x and 5.2.x
+#gem devise
+gem 'devise'
+#gem rails admin
+gem 'rails_admin', '~> 1.3'
 #gem Emumerize
 gem 'enumerize'
 #gem Slim-rails 
@@ -33,7 +39,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -58,6 +64,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'rails-controller-testing'
   gem "factory_bot_rails"
+  gem 'capybara','>= 2.15'
  end
 
 group :development do

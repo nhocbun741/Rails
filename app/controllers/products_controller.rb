@@ -48,7 +48,7 @@ class ProductsController < ApplicationController
 
     ### product_params
     def product_params
-        params.require(:product).permit(:title, :description, :price, :published, :category,:level, :country)
+        params.require(:product).permit(:title, :description, :price, :published, :category_id, :level, :country)
     end
 
     ### find_product
@@ -65,4 +65,5 @@ class ProductsController < ApplicationController
     def messageFail(action)
         "There is an error when #{action}"    
     end  
+
 end

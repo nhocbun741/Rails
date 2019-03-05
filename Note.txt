@@ -1,0 +1,46 @@
+##################################index########################################
+- render_template
+- assigns() the ... 
+vd:
+            it 'assigns the person' do
+                get :index
+                expect(assigns(:persons)).to include(person)
+                end
+
+- render the expected columns
+vd:
+            it "should render the expected columns" do
+                get :index
+                expect(page).to have_content(person.first_name)
+                expect(page).to have_content(person.last_name)
+                expect(page).to have_content(person.email)
+                end
+
+###############################new##############################################
+- render_template
+- assigns() the ...
+vd:
+            it 'assigns the person' do
+                get :new
+                expect(assigns(:person)).to be_a_new(Person)
+                end
+
+##############################create#############################################
+- post create
+vd:
+            it "creates a new Person" do
+                    expect {
+                    post :create, params: { person: valid_attributes }
+                    }.to change(Person, :count).by(1)
+                end
+
+- assigns a newly created ... as @...(person)
+vd:
+            it "assigns a newly created person as @person" do
+                    post :create, params: { person: valid_attributes }
+                    expect(assigns(:person)).to be_a(Person)
+                    expect(assigns(:person)).to be_persisted
+                end
+
+- redirect to "/..../...."
+- 
